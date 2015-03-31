@@ -1,0 +1,5 @@
+## Inspired by:
+
+https://twitter.com/Arcarsenal8/status/543638932500393984
+
+> In order to quantify the quality of a pitch’s projection as it approaches home plate, we will use a model for the probability of a pitch being called a strike to assess its attractiveness to a batter.
