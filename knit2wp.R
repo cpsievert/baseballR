@@ -19,6 +19,7 @@
 #browseURL("http://baseballwithr.wordpress.com/wp-admin/edit.php")
 
 # More painful, but more robust approach
+# setwd("20150415/")
 knitr::knit("index.Rmd")
 browseURL("http://baseballwithr.wordpress.com/wp-admin/edit.php")
 # Go to Posts -> Add New 
