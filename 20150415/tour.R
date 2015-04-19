@@ -27,7 +27,7 @@ pitch_tour(mark, out_dir = "mark")
 # Buerhle tour with color determined by model based clustering
 mark_num <- mark[names(mark) %in% vars]
 mark_num[] <- lapply(mark_num, as.numeric)
-m2 <- Mclust(mark_num)
+m2 <- mclust::Mclust(mark_num)
 mark_num$classification <- m2$classification
 pitch_tour(mark_num, color_by = "classification", out_dir = "mark-mbc")
 # servr::httd("mark-mbc")
