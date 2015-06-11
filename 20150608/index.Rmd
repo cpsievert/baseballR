@@ -1,7 +1,7 @@
 ---
 title: "3D surface plots of the strikezone"
 author: "Carson Sievert"
-date: "June 11, 2015"
+date: "`r Sys.Date()`"
 output: html_document
 ---
 
@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(message = FALSE)
 ```
 
-Over the past month, I've been working on [plotly's R package](https://github.com/ropensci/plotly); and in particular, a [new interface for creating plotlys from R](http://cpsievert.github.io/plotly/dsl/). I'm really excited about this project and I think it's one of the most elegant, straight-forward ways to create interactive graphics that are easy to share. In this post, I'll show you just how easy it is to create 3D surface plots of the strikezone using plotly.
+Over the past month, I've been working on [plotly's R package](https://github.com/ropensci/plotly); and in particular, a [new interface for creating plotlys from R](http://cpsievert.github.io/plotly/pipe-dsl/). I'm really excited about this project and I think it's one of the most elegant, straight-forward ways to create interactive graphics that are easy to share. In this post, I'll show you just how easy it is to create 3D surface plots of the strikezone using plotly.
 
 ### Kernel Densities
 

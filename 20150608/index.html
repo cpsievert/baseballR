@@ -10,6 +10,7 @@
 
 <meta name="author" content="Carson Sievert" />
 
+<meta name="date" content="2015-06-10" />
 
 <title>3D surface plots of the strikezone</title>
 
@@ -63,11 +64,11 @@ img {
 <div id="header">
 <h1 class="title">3D surface plots of the strikezone</h1>
 <h4 class="author"><em>Carson Sievert</em></h4>
-<h4 class="date"><em>June 11, 2015</em></h4>
+<h4 class="date"><em>2015-06-10</em></h4>
 </div>
 
 
-<p>Over the past month, I’ve been working on <a href="https://github.com/ropensci/plotly">plotly’s R package</a>; and in particular, a <a href="http://cpsievert.github.io/plotly/dsl/">new interface for creating plotlys from R</a>. I’m really excited about this project and I think it’s one of the most elegant, straight-forward ways to create interactive graphics that are easy to share. In this post, I’ll show you just how easy it is to create 3D surface plots of the strikezone using plotly.</p>
+<p>Over the past month, I’ve been working on <a href="https://github.com/ropensci/plotly">plotly’s R package</a>; and in particular, a <a href="http://cpsievert.github.io/plotly/pipe-dsl/">new interface for creating plotlys from R</a>. I’m really excited about this project and I think it’s one of the most elegant, straight-forward ways to create interactive graphics that are easy to share. In this post, I’ll show you just how easy it is to create 3D surface plots of the strikezone using plotly.</p>
 <div id="kernel-densities" class="section level3">
 <h3>Kernel Densities</h3>
 <p>The <strong>MASS</strong> package in R has a function called <code>kde2d()</code> which performs 2D density estimation (with a bivariate normal kernel)</p>
@@ -77,7 +78,7 @@ dens &lt;- with(pitches, MASS::kde2d(px, pz))</code></pre>
 # devtools::install_github(&quot;ropensci/plotly@carson-dsl&quot;)
 library(plotly)
 with(dens, plot_ly(x = x, y = y, z = z, type = &quot;surface&quot;))</code></pre>
-<iframe height="600" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~cpsievert/1120" width="800" frameBorder="0">
+<iframe height="600" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~cpsievert/1126" width="800" frameBorder="0">
 </iframe>
 <p>Although this plot is cool, we can’t perform any interesting statistical inference with it. All we can see is an estimated frequency.</p>
 </div>
@@ -98,14 +99,14 @@ dat$fit &lt;- as.numeric(predict(m, dat, type = &quot;response&quot;))</code></p
 <p>plotly’s <code>z</code> argument likes numeric matrices, so we need change the data structure accordingly.</p>
 <pre class="r"><code>z &lt;- Reduce(rbind, split(dat$fit, dat$px))
 plot_ly(x = px, y = pz, z = z, type = &quot;surface&quot;)</code></pre>
-<iframe height="600" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~cpsievert/1122" width="800" frameBorder="0">
+<iframe height="600" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~cpsievert/1128" width="800" frameBorder="0">
 </iframe>
 <p>It’s more interesting to look at the difference in fitted values for right/left handed batters:</p>
 <pre class="r"><code>dat2 &lt;- expand.grid(px = px, pz = pz, stand = &quot;L&quot;)
 dat2$fit &lt;- as.numeric(predict(m, dat2, type = &quot;response&quot;))
 z &lt;- Reduce(rbind, split(dat2$fit - dat$fit, dat2$px))
 plot_ly(x = px, y = pz, z = z, type = &quot;surface&quot;)</code></pre>
-<iframe height="600" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~cpsievert/1124" width="800" frameBorder="0">
+<iframe height="600" id="igraph" scrolling="no" seamless="seamless" src="https://plot.ly/~cpsievert/1130" width="800" frameBorder="0">
 </iframe>
 </div>
 
