@@ -1,7 +1,7 @@
 ---
 title: "3D surface plots of the strikezone"
 author: "Carson Sievert"
-date: "June 7, 2015"
+date: "June 11, 2015"
 output: html_document
 ---
 
